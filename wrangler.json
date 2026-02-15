@@ -1,0 +1,39 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "019c5d73-a5b6-7340-ab16-feb983622047",
+	"main": "./src/worker/index.ts",
+	"compatibility_date": "2025-06-17",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true,
+	"assets": {
+		"directory": "./dist"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "eterno_qr",
+			"database_id": "2657b9aa-0a65-43d9-bd3c-44573104f239"
+		},
+	],
+	"r2_buckets": [
+		{
+			"binding": "R2_BUCKET",
+			"bucket_name": "019c5d73-a5b6-7340-ab16-feb983622047"
+		}
+	],
+	"services": [
+		{
+			"binding": "EMAILS",
+			"service": "emails-service",
+			"entrypoint": "EmailService",
+			"props": {
+				"appId": "019c5d73-a5b6-7340-ab16-feb983622047"
+			}
+		}
+	]
+}
